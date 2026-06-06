@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="PELA 2000 product photo placeholder">
-  <rect width="400" height="300" fill="#e9f0f3"/>
-  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#9fb6c0" stroke-width="2" stroke-dasharray="8 6" rx="10"/>
-  <g fill="#0e4d64">
-    <path d="M200 96c-22 30-36 50-36 70a36 36 0 0 0 72 0c0-20-14-40-36-70z" opacity="0.85"/>
-  </g>
-  <text x="200" y="216" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="22" font-weight="700" fill="#14242e">PELA 2000</text>
-  <text x="200" y="242" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#6b7880">Product photo — pending</text>
+  <rect width="400" height="300" fill="#eaf0f7"/>
+  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#c4d1e0" stroke-width="2" stroke-dasharray="8 6" rx="12"/>
+  <path d="M200 92c-22 30-36 50-36 70a36 36 0 0 0 72 0c0-20-14-40-36-70z" fill="#11304f"/>
+  <circle cx="186" cy="170" r="9" fill="#2d6bf0"/>
+  <text x="200" y="216" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#11304f">PELA 2000</text>
+  <text x="200" y="242" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="13" fill="#7a8a9c">Product photo — pending</text>
 </svg>

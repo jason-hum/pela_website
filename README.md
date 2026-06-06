@@ -28,6 +28,7 @@ pela_website/
 └── assets/
     ├── css/style.css       # Single shared stylesheet + design tokens
     ├── js/main.js          # Mobile nav toggle + email assembly
+    ├── fonts/              # Self-hosted woff2 (Space Grotesk + Inter) + OFL licenses
     └── img/                # Favicons, OG image, product image placeholders
 ```
 
@@ -47,12 +48,37 @@ python3 -m http.server 8000
 
 Any static server works (`npx serve`, `php -S localhost:8000`, etc.).
 
+## Typography & color
+
+The design is a "Modern Engineered" system: technical and confident, anchored on the dark-blue
+logo.
+
+- **Type** — display/headings in **Space Grotesk**, body/UI in **Inter**. Both are self-hosted
+  as subset (Latin) variable `woff2` in `assets/fonts/` — no Google Fonts request at runtime, so
+  the site stays fast and works fully offline. `font-display: swap` + `<link rel="preload">` on
+  the two primary faces avoid layout flash. Fonts are licensed under the SIL Open Font License;
+  the license files ship alongside them (`OFL-*.txt`).
+- **Color** — one brand hue plus one accent plus cool neutrals, defined as CSS custom properties
+  in `:root`:
+  - ink / logo navy `#11304F`, deepest `#0B2238`
+  - blueprint-blue accent `#2D6BF0` (hover `#1F57D6`), tint `#E9F0FD`
+  - neutrals: paper `#F3F6FA`, surface `#FFFFFF`, lines `#DBE3EC` / `#C4D1E0`
+  - text `#16293D` / soft `#51647A` / faint `#5F6F7E`
+  - one functional warning amber (`#A76410`) reserved for the safety note only
+- All text/background pairings were checked for **WCAG AA** contrast (normal text ≥ 4.5:1).
+- The hero uses a faint blueprint-grid motif behind the product to reinforce the "engineered
+  tool" feel; alternating sections sit on the paper band for rhythm.
+
+To change the palette, edit the tokens at the top of `assets/css/style.css` — every component
+inherits from them. To swap a typeface, replace the `woff2` in `assets/fonts/` and update the
+matching `@font-face` block.
+
 ## Design & accessibility
 
 - Mobile-first, fully responsive (nav collapses to a toggle under 680px).
 - Semantic HTML, one `<h1>` per page, skip-link, visible focus states, `alt` on every image,
   `prefers-reduced-motion` respected.
-- Restrained B2B/DIY aesthetic: petrol blue (trust), amber (oil), green (eco). Flat, minimal.
+- Restrained B2B/DIY aesthetic: dark-blue ink + a single blueprint-blue accent. Flat, minimal.
 - Near-zero JS; CSS is a single ~10 KB file.
 
 ## SEO
