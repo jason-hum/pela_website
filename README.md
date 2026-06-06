@@ -77,8 +77,7 @@ logo.
 - **Human-styling details:** a measured-ruler motif and an "EST. 1996" wax-seal stamp (nods to
   the calibrated containers and the brand's age); the home page uses an editorial asymmetric
   hero, a numbered "how it works" strip (instead of a generic icon-tile row), and a catalog-style
-  product grid with index numbers + SKUs. Sections alternate onto the paper band (`.section--paper`)
-  for rhythm.
+  product grid with index numbers + SKUs. These run through the card/bento geometry described below.
 
 To change the palette, edit the tokens at the top of `assets/css/style.css` — every component
 inherits from them. To swap a typeface, replace the `woff2` in `assets/fonts/` and update the
