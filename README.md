@@ -28,7 +28,7 @@ pela_website/
 └── assets/
     ├── css/style.css       # Single shared stylesheet + design tokens
     ├── js/main.js          # Mobile nav toggle + email assembly
-    ├── fonts/              # Self-hosted woff2 (Space Grotesk + Inter) + OFL licenses
+    ├── fonts/              # Self-hosted woff2 (Space Grotesk + Inter + Space Mono) + OFL licenses
     └── img/                # Favicons, OG image, product image placeholders
 ```
 
@@ -53,21 +53,32 @@ Any static server works (`npx serve`, `php -S localhost:8000`, etc.).
 The design is a "Modern Engineered" system: technical and confident, anchored on the dark-blue
 logo.
 
-- **Type** — display/headings in **Space Grotesk**, body/UI in **Inter**. Both are self-hosted
-  as subset (Latin) variable `woff2` in `assets/fonts/` — no Google Fonts request at runtime, so
-  the site stays fast and works fully offline. `font-display: swap` + `<link rel="preload">` on
-  the two primary faces avoid layout flash. Fonts are licensed under the SIL Open Font License;
-  the license files ship alongside them (`OFL-*.txt`).
-- **Color** — one brand hue plus one accent plus cool neutrals, defined as CSS custom properties
-  in `:root`:
+- **Type** — three self-hosted families, deliberately paired (all by the same lineage of
+  foundries):
+  - **Space Grotesk** — display / headings
+  - **Inter** — body / UI
+  - **Space Mono** — technical accents (spec sheets, prices, SKUs, kickers, footer meta). The
+    monospace is the strongest "engineered by a person" signal for a tool/instrument brand.
+
+  All are subset (Latin) `woff2` in `assets/fonts/` (~200 KB total) — no Google Fonts request at
+  runtime, so the site stays fast and works fully offline. `font-display: swap` + `<link
+  rel="preload">` on the three above-the-fold faces avoid layout flash. Licensed under the SIL
+  Open Font License; license files ship alongside (`OFL-*.txt`).
+- **Color** — one brand hue + one accent + warm neutrals, as CSS custom properties in `:root`:
   - ink / logo navy `#11304F`, deepest `#0B2238`
-  - blueprint-blue accent `#2D6BF0` (hover `#1F57D6`), tint `#E9F0FD`
-  - neutrals: paper `#F3F6FA`, surface `#FFFFFF`, lines `#DBE3EC` / `#C4D1E0`
-  - text `#16293D` / soft `#51647A` / faint `#5F6F7E`
-  - one functional warning amber (`#A76410`) reserved for the safety note only
-- All text/background pairings were checked for **WCAG AA** contrast (normal text ≥ 4.5:1).
-- The hero uses a faint blueprint-grid motif behind the product to reinforce the "engineered
-  tool" feel; alternating sections sit on the paper band for rhythm.
+  - blueprint-blue accent `#2D6BF0`; **`#1F57D6` is used for accent-as-text** (links, kickers)
+    to clear AA contrast on the warm paper
+  - warm neutrals: page `#FFFDF9`, paper band `#F4EFE4`, media wells `#EFE9DB`, lines `#E4DDCD`
+    / `#D2C8B3`
+  - text `#26303A` / soft `#55626E` / faint `#5D6975`
+  - one functional warning amber (`#9C5A0E`) reserved for the safety note only
+- All text/background pairings were checked for **WCAG AA** contrast (normal text ≥ 4.5:1) on
+  both white and the warm paper band.
+- **Human-styling details:** a measured-ruler motif and an "EST. 1996" wax-seal stamp (nods to
+  the calibrated containers and the brand's age); the home page uses an editorial asymmetric
+  hero, a numbered "how it works" strip (instead of a generic icon-tile row), and a catalog-style
+  product grid with index numbers + SKUs. Sections alternate onto the paper band (`.section--paper`)
+  for rhythm.
 
 To change the palette, edit the tokens at the top of `assets/css/style.css` — every component
 inherits from them. To swap a typeface, replace the `woff2` in `assets/fonts/` and update the

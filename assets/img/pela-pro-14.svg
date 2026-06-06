@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="PELA Pro 14 product photo placeholder">
-  <rect width="400" height="300" fill="#eaf0f7"/>
-  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#c4d1e0" stroke-width="2" stroke-dasharray="8 6" rx="12"/>
+  <rect width="400" height="300" fill="#efe9db"/>
+  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#d2c8b3" stroke-width="2" stroke-dasharray="8 6" rx="12"/>
   <path d="M200 92c-22 30-36 50-36 70a36 36 0 0 0 72 0c0-20-14-40-36-70z" fill="#11304f"/>
   <circle cx="186" cy="170" r="9" fill="#2d6bf0"/>
   <text x="200" y="216" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#11304f">PELA Pro 14</text>
-  <text x="200" y="242" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="13" fill="#7a8a9c">Product photo — pending</text>
+  <text x="200" y="242" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="13" fill="#5d6975">Product photo — pending</text>
 </svg>

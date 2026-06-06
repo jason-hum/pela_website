@@ -31,6 +31,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-mono-latin-400.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Structured data: Organization (site-wide) -->
@@ -108,79 +109,99 @@
           </div>
         </div>
         <div class="hero__art">
+          <svg class="stamp" viewBox="0 0 120 120" role="img" aria-label="Established 1996">
+            <circle cx="60" cy="60" r="57" fill="#fffdf9" stroke="#11304f" stroke-width="2"/>
+            <circle cx="60" cy="60" r="49" fill="none" stroke="#2d6bf0" stroke-width="1" stroke-dasharray="2 3"/>
+            <path id="seal-top" d="M60 60 m-40 0 a40 40 0 0 1 80 0" fill="none"/>
+            <path id="seal-bot" d="M60 60 m-40 0 a40 40 0 0 0 80 0" fill="none"/>
+            <text font-size="9" letter-spacing="2"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">PELA · PRODUCTS</textPath></text>
+            <text font-size="8" letter-spacing="2"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle">OIL EXTRACTORS</textPath></text>
+            <text x="60" y="52" text-anchor="middle" font-size="9" letter-spacing="2" fill="#2d6bf0">EST.</text>
+            <text x="60" y="78" text-anchor="middle" font-size="23" font-weight="700">1996</text>
+          </svg>
           <div class="frame">
             <!-- TODO: replace with real product photo — original: https://www.pelaproducts.com/PL6000BH-use.gif (see MISSING_ASSETS.md) -->
             <img src="assets/img/pela-6000.svg" width="400" height="300" alt="PELA 6000 oil extractor — a manual vacuum pump with a see-through calibrated container.">
-            <span class="tagchip">Most popular &middot; 6.0 L</span>
+            <p class="caption"><span>PELA 6000</span><span><b>6.0 L</b> &middot; most popular</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Intro -->
+    <!-- How it works -->
     <section class="section">
-      <div class="container stack" style="max-width:72ch;">
-        <p>Then watch the old oil get sucked out of the engine and into the container. Our quick, easy and clean process eliminates the need to remove drain plugs or tilt equipment. In areas that are confined or inaccessible, PELA Oil Extractors are the solution! Our pumps have been popular among do-it-yourselfers and professionals alike for over 10 years.</p>
-        <p><a href="applications.html"><strong>See some of the useful applications &rarr;</strong></a></p>
-      </div>
-    </section>
-
-    <!-- Why PELA -->
-    <section class="section--tight">
       <div class="container">
-        <ul class="features">
-          <li class="feature">
-            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round"/></svg>
-            <h3>Quick &amp; easy</h3>
-            <p>Pump the handle a few times to create a powerful vacuum. Continuous pumping isn't required — the unit extracts automatically.</p>
+        <div class="stack" style="max-width:62ch;">
+          <p>Then watch the old oil get sucked out of the engine and into the container. Our quick, easy and clean process eliminates the need to remove drain plugs or tilt equipment. In areas that are confined or inaccessible, PELA Oil Extractors are the solution! Our pumps have been popular among do-it-yourselfers and professionals alike for over 10 years.</p>
+        </div>
+
+        <p class="eyebrow" style="margin-top:var(--sp-7);">How it works</p>
+        <ol class="process">
+          <li>
+            <span class="process__n">01</span>
+            <h3>Pump</h3>
+            <p>Pump the unit 10 to 20 times in a row to create a powerful vacuum. Continuous pumping isn't required.</p>
           </li>
-          <li class="feature">
-            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3c-4 5-6 8-6 11a6 6 0 0 0 12 0c0-3-2-6-6-11z" stroke-linejoin="round"/></svg>
-            <h3>Clean — no spills</h3>
-            <p>No need to remove drain plugs or tilt equipment. Oil drains neatly into a see-through, calibrated container.</p>
+          <li>
+            <span class="process__n">02</span>
+            <h3>Extract</h3>
+            <p>The vacuum draws the old oil up through the dipstick tube and into the see-through, calibrated container.</p>
           </li>
-          <li class="feature">
-            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z" stroke-linejoin="round"/><path d="M9 11c1.5 1.5 4.5 1.5 6 0"/></svg>
-            <h3>Reaches anywhere</h3>
-            <p>Ideal for confined or inaccessible spaces where conventional draining isn't practical.</p>
+          <li>
+            <span class="process__n">03</span>
+            <h3>Pour &amp; recycle</h3>
+            <p>Empty the captured oil with the pour spout, then take the used oil to a recycling depot.</p>
           </li>
-        </ul>
+        </ol>
+
+        <div class="cta-row">
+          <a class="btn btn--secondary" href="applications.html">See all applications</a>
+        </div>
       </div>
     </section>
 
     <!-- Product line -->
-    <section class="section">
+    <section class="section section--paper">
       <div class="container">
+        <p class="eyebrow">The range</p>
         <h2>A complete line of pumps</h2>
         <p class="lede">PELA offers a complete line of pumps to meet all your needs, from small to big jobs.</p>
         <div class="grid grid--4" style="margin-top:var(--sp-6);">
           <article class="card product">
+            <span class="product__idx">01</span>
             <!-- TODO: replace with real product photo — original: https://www.pelaproducts.com/PL2000BH-use.gif (see MISSING_ASSETS.md) -->
             <div class="product__media"><img src="assets/img/pela-2000.svg" width="400" height="300" alt="PELA 2000 oil extractor"></div>
+            <p class="sku">PL-2000</p>
             <h3>PELA 2000</h3>
-            <p class="muted">2.5 L — small jobs &amp; homeowners</p>
-            <p class="price">$39.95 USD</p>
+            <p class="cap">2.5 L &middot; small jobs &amp; homeowners</p>
+            <p class="price">$39.95</p>
           </article>
           <article class="card product">
+            <span class="product__idx">02</span>
             <!-- TODO: replace with real product photo — original: https://www.pelaproducts.com/PL6000BH-use.gif (see MISSING_ASSETS.md) -->
             <div class="product__media"><img src="assets/img/pela-6000.svg" width="400" height="300" alt="PELA 6000 oil extractor"></div>
+            <p class="sku">PL-6000</p>
             <h3>PELA 6000</h3>
-            <p class="muted">6.0 L — our most popular</p>
-            <p class="price">$59.95 USD</p>
+            <p class="cap">6.0 L &middot; our most popular</p>
+            <p class="price">$59.95</p>
           </article>
           <article class="card product">
+            <span class="product__idx">03</span>
             <!-- TODO: replace with real product photo — original: https://www.pelaproducts.com/PL650-use.gif (see MISSING_ASSETS.md) -->
             <div class="product__media"><img src="assets/img/pela-650.svg" width="400" height="300" alt="Big PELA 650 oil extractor"></div>
+            <p class="sku">PL-650</p>
             <h3>Big PELA 650</h3>
-            <p class="muted">6.5 L — pro favorite since 1996</p>
-            <p class="price">$99.95 USD</p>
+            <p class="cap">6.5 L &middot; pro favorite since 1996</p>
+            <p class="price">$99.95</p>
           </article>
           <article class="card product">
+            <span class="product__idx">04</span>
             <!-- TODO: replace with real product photo — original: https://www.pelaproducts.com/PL14K-use.gif (see MISSING_ASSETS.md) -->
             <div class="product__media"><img src="assets/img/pela-pro-14.svg" width="400" height="300" alt="PELA Pro 14 oil extractor"></div>
+            <p class="sku">PL-14K</p>
             <h3>PELA Pro 14</h3>
-            <p class="muted">14 L — heavy-duty, big engines</p>
-            <p class="price">$149.95 USD</p>
+            <p class="cap">14 L &middot; heavy-duty, big engines</p>
+            <p class="price">$149.95</p>
           </article>
         </div>
         <div class="cta-row">
