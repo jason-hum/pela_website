@@ -84,6 +84,10 @@ To change the palette, edit the tokens at the top of `assets/css/style.css` — 
 inherits from them. To swap a typeface, replace the `woff2` in `assets/fonts/` and update the
 matching `@font-face` block.
 
+## Layout geometry
+
+The site sits on a single fixed, blue-tinted warm gradient; every block is a floating card (header and footer included). The home page is a **responsive bento mosaic** built on a 12-column grid (`.bento` + `.b-*` span utilities) that reflows to 6 columns on tablet and a single stack on mobile. Inner pages lead with a `.page-head` card and render their content (applications, review categories, steps, product specs) as card tiles via a shared card primitive. To retune the mosaic, change the `.b-*` spans in the markup or the breakpoints in the stylesheet.
+
 ## Design & accessibility
 
 - Mobile-first, fully responsive (nav collapses to a toggle under 680px).

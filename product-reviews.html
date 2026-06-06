@@ -46,7 +46,8 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container">
+      <div class="header-inner">
       <a class="brand" href="index.html" aria-label="PELA Products — home">
         <svg class="brand__mark" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <rect width="64" height="64" rx="14" fill="#11304f"/>
@@ -72,16 +73,19 @@
           <li><a href="contact.html">Where To Buy</a></li>
         </ul>
       </nav>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <section class="section">
       <div class="container">
-        <p class="eyebrow">Trusted by the press</p>
-        <h1>Product reviews</h1>
-        <p class="lede">The following is a reference list of publications that have reviewed our products.</p>
-        <p class="muted">Note: some external links point to articles on third-party sites and may have moved or expired over time.</p>
+        <div class="page-head card" style="margin-bottom:var(--sp-5);">
+          <p class="eyebrow">Trusted by the press</p>
+          <h1>Product reviews</h1>
+          <p class="lede">The following is a reference list of publications that have reviewed our products.</p>
+          <p class="muted" style="margin-bottom:0;">Note: some external links point to articles on third-party sites and may have moved or expired over time.</p>
+        </div>
 
         <div class="reviews" style="margin-top:var(--sp-6);">
 
@@ -164,34 +168,36 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand__name">PELA Products</span>
-        <p>Manually operated vacuum pumps for fluid removal — the quick, easy, clean and environmentally friendly way to change oil.</p>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="applications.html">Applications</a></li>
-          <li><a href="description.html">Description</a></li>
-          <li><a href="how-to-use.html">How To Use</a></li>
-          <li><a href="product-reviews.html">Product Reviews</a></li>
-          <li><a href="contact.html">Where To Buy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="contact.html" data-email data-subject="PELA Products enquiry">Email us</a></li>
-          <li><a href="contact.html">Where to buy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <span>&copy; <span id="year">2009</span> PELA Products. All rights reserved.</span>
-        <span>The new way to change oil.</span>
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <span class="brand__name">PELA Products</span>
+            <p>Manually operated vacuum pumps for fluid removal — the quick, easy, clean and environmentally friendly way to change oil.</p>
+          </div>
+          <div>
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="applications.html">Applications</a></li>
+              <li><a href="description.html">Description</a></li>
+              <li><a href="how-to-use.html">How To Use</a></li>
+              <li><a href="product-reviews.html">Product Reviews</a></li>
+              <li><a href="contact.html">Where To Buy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="contact.html" data-email data-subject="PELA Products enquiry">Email us</a></li>
+              <li><a href="contact.html">Where to buy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; <span id="year">2009</span> PELA Products. All rights reserved.</span>
+          <span>The new way to change oil.</span>
+        </div>
       </div>
     </div>
   </footer>
