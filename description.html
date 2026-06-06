@@ -26,9 +26,7 @@
   <meta name="twitter:description" content="Full descriptions and specifications for the complete PELA oil extractor line.">
   <meta name="twitter:image" content="https://www.pelaproducts.com/assets/img/og-image.png">
 
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-mono-latin-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-latin-var.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
   {
@@ -61,8 +59,10 @@
       <a class="brand" href="index.html" aria-label="PELA Products — home">
         <svg class="brand__mark" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <rect width="64" height="64" rx="14" fill="#11304f"/>
-          <path d="M32 13c-9 12-15 20-15 28a15 15 0 0 0 30 0c0-8-6-16-15-28z" fill="#2d6bf0"/>
-          <circle cx="26.5" cy="42" r="4.5" fill="#ffffff" opacity="0.85"/>
+          <path d="M32 8 L53 29 L11 29 Z" fill="#d6201c"/>
+          <rect x="17.5" y="29" width="8" height="27" fill="#eca3b6"/>
+          <rect x="28" y="29" width="8" height="27" fill="#d6201c"/>
+          <rect x="38.5" y="29" width="8" height="27" fill="#eca3b6"/>
         </svg>
         <span class="brand__text">
           <span class="brand__name">PELA</span>
@@ -90,30 +90,34 @@
   <main id="main">
     <section class="section">
       <div class="container">
-        <div class="page-head card" style="margin-bottom:var(--sp-5);">
-          <p class="eyebrow">The environmentally friendly way to change oil</p>
-          <h1>Description</h1>
-          <p class="lede">A complete line of manually operated vacuum pumps — from small homeowner jobs to heavy-duty workshop use.</p>
+        <div class="page-head card page-head--media" style="margin-bottom:var(--sp-5);">
+          <div>
+            <h1>Description</h1>
+            <p class="lede">A complete line of manually operated vacuum pumps — from small homeowner jobs to heavy-duty workshop use.</p>
+          </div>
+          <figure class="lineup">
+            <img src="assets/img/4PUMPSBH-DES.gif" width="197" height="139" alt="The full PELA range: PELA 2000, PELA 6000, Big PELA 650 and PELA Pro 14 oil extractors side by side">
+            <figcaption>The full PELA range, smallest to largest</figcaption>
+          </figure>
         </div>
 
         <div class="grid" style="margin-top:var(--sp-6); gap:var(--sp-6);">
 
           <!-- PELA 2000 -->
           <article class="card" id="pela-2000">
-            <div class="grid grid--2" style="gap:var(--sp-5); align-items:start;">
-              <div class="product__media" style="aspect-ratio:4/3;">
-                <!-- TODO: replace with real photo — original: https://www.pelaproducts.com/PL2000BH-use.gif (see MISSING_ASSETS.md) -->
-                <img src="assets/img/pela-2000.svg" width="400" height="300" alt="PELA 2000 oil extractor with calibrated container">
+            <div class="grid product-row" style="gap:var(--sp-6); align-items:start;">
+              <div class="product__media">
+                <img src="assets/img/PL2000BH-use.gif" width="95" height="184" alt="PELA 2000 oil extractor with calibrated container">
               </div>
               <div>
                 <p class="sku">PL-2000</p>
                 <h2 style="font-size:var(--fs-600);">PELA 2000 Oil Extractor</h2>
-                <p>The PELA 2000 is a scaled down version of our popular PELA 6000. With all the same convenient features, simply pump 5 to 10 times in a row to create a powerful vacuum. Then watch the oil drain neatly into the calibrated container. The PELA 2000 is designed for those who have small jobs but don't want to pay the higher prices of our bigger pumps. With a capacity of 2.5 litres, it's ideal for small 4-stroke outboard engines up to 50 HP (depending on make), sailboats with small diesel engines (9 HP to 18 HP), and PWCs with 4-stroke engines. For homeowners with lawnmowers and other power equipment, this value priced tool is essential.</p>
+                <p>The PELA 2000 is a scaled down version of our popular PELA 6000. With all the same convenient features, simply pump 5 to 10 times in a row to create a powerful vacuum. Then watch the oil drain neatly into the calibrated container. The PELA 2000 is designed for those who have small jobs but don’t want to pay the higher prices of our bigger pumps. With a capacity of 2.5 litres, it’s ideal for small 4-stroke outboard engines up to 50 HP (depending on make), sailboats with small diesel engines (9 HP to 18 HP), and PWCs with 4-stroke engines. For homeowners with lawnmowers and other power equipment, this value priced tool is essential.</p>
                 <ul class="spec-list">
                   <li><span class="k">Capacity</span><span class="v">2.5 litres (2.64 qts)</span></li>
-                  <li><span class="k">Height (assembled)</span><span class="v">17.5"</span></li>
-                  <li><span class="k">Container diameter</span><span class="v">7"</span></li>
-                  <li><span class="k">Tube</span><span class="v">Probe 3/16" OD, 43"; Clear 3/8" OD, 39"</span></li>
+                  <li><span class="k">Height (assembled)</span><span class="v">17.5″</span></li>
+                  <li><span class="k">Container diameter</span><span class="v">7″</span></li>
+                  <li><span class="k">Tube</span><span class="v">Probe 3/16″ OD, 43″; Clear 3/8″ OD, 39″</span></li>
                   <li><span class="k">List price</span><span class="v price">$39.95 USD</span></li>
                 </ul>
               </div>
@@ -122,10 +126,9 @@
 
           <!-- PELA 6000 -->
           <article class="card" id="pela-6000">
-            <div class="grid grid--2" style="gap:var(--sp-5); align-items:start;">
-              <div class="product__media" style="aspect-ratio:4/3;">
-                <!-- TODO: replace with real photo — original: https://www.pelaproducts.com/PL6000BH-use.gif (see MISSING_ASSETS.md) -->
-                <img src="assets/img/pela-6000.svg" width="400" height="300" alt="PELA 6000 oil extractor with see-through calibrated container">
+            <div class="grid product-row" style="gap:var(--sp-6); align-items:start;">
+              <div class="product__media">
+                <img src="assets/img/PL6000BH-use.gif" width="98" height="186" alt="PELA 6000 oil extractor with see-through calibrated container">
               </div>
               <div>
                 <p class="sku">PL-6000</p>
@@ -133,9 +136,9 @@
                 <p>This is our most popular oil changer. It has the power of our Big PELA but comes in a compact, more affordable model. Simply pump 10 to 20 times in a row to create a powerful vacuum. Sturdy, see-through container (6.0 litres) neatly captures the oil. The calibrated walls let the user know how much oil has been removed. A pour spout is included to help emptying. Pump is removable for easy storage. Ideal for consumer use. Sold around the world since 1998.</p>
                 <ul class="spec-list">
                   <li><span class="k">Capacity</span><span class="v">6.0 litres (6.34 qts)</span></li>
-                  <li><span class="k">Height (assembled)</span><span class="v">21.5"</span></li>
-                  <li><span class="k">Container diameter</span><span class="v">9"</span></li>
-                  <li><span class="k">Tube</span><span class="v">Probe 3/16" OD, 43"; Clear 3/8" OD, 39"</span></li>
+                  <li><span class="k">Height (assembled)</span><span class="v">21.5″</span></li>
+                  <li><span class="k">Container diameter</span><span class="v">9″</span></li>
+                  <li><span class="k">Tube</span><span class="v">Probe 3/16″ OD, 43″; Clear 3/8″ OD, 39″</span></li>
                   <li><span class="k">List price</span><span class="v price">$59.95 USD</span></li>
                 </ul>
               </div>
@@ -144,10 +147,9 @@
 
           <!-- Big PELA 650 -->
           <article class="card" id="pela-650">
-            <div class="grid grid--2" style="gap:var(--sp-5); align-items:start;">
-              <div class="product__media" style="aspect-ratio:4/3;">
-                <!-- TODO: replace with real photo — original: https://www.pelaproducts.com/PL650-use.gif (see MISSING_ASSETS.md) -->
-                <img src="assets/img/pela-650.svg" width="400" height="300" alt="Big PELA 650 oil extractor with integrated container">
+            <div class="grid product-row" style="gap:var(--sp-6); align-items:start;">
+              <div class="product__media">
+                <img src="assets/img/PL650-use.gif" width="89" height="186" alt="Big PELA 650 oil extractor with integrated container">
               </div>
               <div>
                 <p class="sku">PL-650</p>
@@ -155,10 +157,10 @@
                 <p>Our original pump, since 1996. A long time favorite among technicians because of its power and durability. Requires just 4 to 15 strokes in a row to create a powerful vacuum. The integrated container (6.5 litres) then neatly captures the oil preventing messy spills. The see-through, calibrated container lets the user know how much oil has been extracted. A built-in float switch automatically stops extraction as soon as capacity is reached. A pour spout facilitates emptying. With the pump housed inside the container, the Big PELA is a durable, maintenance free unit.</p>
                 <ul class="spec-list">
                   <li><span class="k">Capacity</span><span class="v">6.5 litres (6.87 qts)</span></li>
-                  <li><span class="k">Height</span><span class="v">25"</span></li>
-                  <li><span class="k">Cylindrical diameter</span><span class="v">6.25"</span></li>
-                  <li><span class="k">Tubes</span><span class="v">3/16" &amp; 1/4" OD, 47" each</span></li>
-                  <li><span class="k">Extension tube</span><span class="v">39"</span></li>
+                  <li><span class="k">Height</span><span class="v">25″</span></li>
+                  <li><span class="k">Cylindrical diameter</span><span class="v">6.25″</span></li>
+                  <li><span class="k">Tubes</span><span class="v">3/16″ &amp; 1/4″ OD, 47″ each</span></li>
+                  <li><span class="k">Extension tube</span><span class="v">39″</span></li>
                   <li><span class="k">List price</span><span class="v price">$99.95 USD</span></li>
                 </ul>
               </div>
@@ -167,21 +169,20 @@
 
           <!-- PELA Pro 14 -->
           <article class="card" id="pela-pro-14">
-            <div class="grid grid--2" style="gap:var(--sp-5); align-items:start;">
-              <div class="product__media" style="aspect-ratio:4/3;">
-                <!-- TODO: replace with real photo — original: https://www.pelaproducts.com/PL14K-use.gif (see MISSING_ASSETS.md) -->
-                <img src="assets/img/pela-pro-14.svg" width="400" height="300" alt="PELA Pro 14 heavy-duty oil extractor">
+            <div class="grid product-row" style="gap:var(--sp-6); align-items:start;">
+              <div class="product__media">
+                <img src="assets/img/PL14K-use.gif" width="104" height="187" alt="PELA Pro 14 heavy-duty oil extractor">
               </div>
               <div>
                 <p class="sku">PL-14K</p>
-                <h2 style="font-size:var(--fs-600);">PELA Pro 14 Oil Extractor <span class="badge">New since 2005</span></h2>
+                <h2 style="font-size:var(--fs-600);">PELA Pro 14 Oil Extractor</h2>
                 <p>We are pleased to finally offer a heavy duty unit for big engines. With a 14 liter capacity, the PELA Pro 14 is the largest on the market. It comes with a new improved, patent pending mechanism. For durability, the pump unit is also housed inside the container. Just pump 20 to 25 times in a row to create a powerful vacuum and then watch the oil drain into the see-through, calibrated container. An internal float switch shuts off extraction automatically when full. Ideal in the workshop for servicing large engines or several smaller ones before emptying. Ideal for boats with large diesels and those with twin engines.</p>
                 <ul class="spec-list">
                   <li><span class="k">Capacity</span><span class="v">14.0 litres (14.8 qts)</span></li>
-                  <li><span class="k">Height</span><span class="v">25.5"</span></li>
-                  <li><span class="k">Cylindrical diameter</span><span class="v">8.35"</span></li>
-                  <li><span class="k">Tubes</span><span class="v">3/16" &amp; 1/4" OD, 61" each</span></li>
-                  <li><span class="k">Extension tube</span><span class="v">61"</span></li>
+                  <li><span class="k">Height</span><span class="v">25.5″</span></li>
+                  <li><span class="k">Cylindrical diameter</span><span class="v">8.35″</span></li>
+                  <li><span class="k">Tubes</span><span class="v">3/16″ &amp; 1/4″ OD, 61″ each</span></li>
+                  <li><span class="k">Extension tube</span><span class="v">61″</span></li>
                   <li><span class="k">List price</span><span class="v price">$149.95 USD</span></li>
                 </ul>
               </div>

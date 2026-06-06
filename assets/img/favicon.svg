@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PELA">
   <rect width="64" height="64" rx="14" fill="#11304f"/>
-  <path d="M32 13c-9 12-15 20-15 28a15 15 0 0 0 30 0c0-8-6-16-15-28z" fill="#2d6bf0"/>
-  <circle cx="26.5" cy="42" r="4.5" fill="#ffffff" opacity="0.9"/>
+  <!-- PELA mark: red roof over three columns (pink / red / pink) -->
+  <path d="M32 8 L53 29 L11 29 Z" fill="#d6201c"/>
+  <rect x="17.5" y="29" width="8" height="27" fill="#eca3b6"/>
+  <rect x="28"   y="29" width="8" height="27" fill="#d6201c"/>
+  <rect x="38.5" y="29" width="8" height="27" fill="#eca3b6"/>
 </svg>

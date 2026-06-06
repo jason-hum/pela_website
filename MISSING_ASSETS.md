@@ -1,59 +1,80 @@
-# Missing assets
+# Assets fetched from the original site
 
-The build sandbox has **no network route to `pelaproducts.com`** (every request returned
-HTTP 000), and `web_fetch` returns empty bytes for binary files. So the original product
-images could not be downloaded automatically. Page **text content was captured in full** —
-only binary images are missing.
+The original product and application media was downloaded from the live
+`pelaproducts.com` and now lives under `assets/img/` (and `assets/video/`).
+Filenames are kept as on the original site for traceability.
 
-For each missing image, a clearly-labeled placeholder is already in place (an inline SVG
-under `assets/img/`), and the markup carries a `<!-- TODO ... -->` comment at the exact spot.
-Replace the placeholder file (or update the `src`) once you've downloaded the real asset.
+## Product photos (Home + Description)
 
-## Product images (confirmed, referenced on Home + Description)
+| Original URL | Local file | Used on |
+|---|---|---|
+| `/PL2000BH-use.gif` | `assets/img/PL2000BH-use.gif` | `index.html`, `description.html` |
+| `/PL6000BH-use.gif` | `assets/img/PL6000BH-use.gif` | `index.html` (hero + card), `description.html` |
+| `/PL650-use.gif`    | `assets/img/PL650-use.gif`    | `index.html`, `description.html` |
+| `/PL14K-use.gif`    | `assets/img/PL14K-use.gif`    | `index.html`, `description.html` |
+| `/4PUMPSBH-DES.gif` | `assets/img/4PUMPSBH-DES.gif` | `description.html` (full-range lineup) |
 
-| Original URL | On page(s) | Placeholder in repo | Suggested final file |
-|---|---|---|---|
-| https://www.pelaproducts.com/PL2000BH-use.gif | `index.html`, `description.html` | `assets/img/pela-2000.svg` | `assets/img/pela-2000.webp` |
-| https://www.pelaproducts.com/PL6000BH-use.gif | `index.html` (hero + card), `description.html` | `assets/img/pela-6000.svg` | `assets/img/pela-6000.webp` |
-| https://www.pelaproducts.com/PL650-use.gif | `index.html`, `description.html` | `assets/img/pela-650.svg` | `assets/img/pela-650.webp` |
-| https://www.pelaproducts.com/PL14K-use.gif | `index.html`, `description.html` | `assets/img/pela-pro-14.svg` | `assets/img/pela-pro-14.webp` |
+## Application photos (Applications)
 
-## Possibly-missing images (not confirmable — page was network-blocked)
+| Original URL | Local file | Caption |
+|---|---|---|
+| `/images/boat-app.jpg`  | `assets/img/boat-app.jpg`       | Boats & marine |
+| `/images/PL6000-HD.jpg` | `assets/img/PL6000-HD.jpg`      | Motorcycles |
+| `/images/PL650-car.jpg` | `assets/img/PL650-car.jpg`      | Cars & 4×4s |
+| `/images/PL650-mow.jpg` | `assets/img/PL650-mow.jpg`      | Lawnmowers |
+| `/PL2000BH-gener.gif`   | `assets/img/PL2000BH-gener.gif` | Generators |
 
-The two original How-To sub-pages (`HowToUse1.htm`, `HowToUse2.htm`) reference "the photo"
-in their text ("hold the pump as in the photo"), implying step photos existed on the old
-site. Their filenames could **not** be enumerated because raw HTML wasn't retrievable. If you
-want those photos on `how-to-use.html`, grab them from the live site and drop them into the
-step blocks (search the page source for `<img`).
+## How-To step photos (How To Use)
 
-- Page: `how-to-use.html` (merged from `HowToUse1.htm` + `HowToUse2.htm`)
-- Action: inspect original page source for `*.gif`/`*.jpg` and add to the relevant `<li>` in `.steps`.
+Fetched from the two original instruction sub-pages and placed one-per-step.
 
-## Logo / favicon
+| Procedure | Step | Local file |
+|---|---|---|
+| Big PELA 650 / Pro 14 | Warm up / remove dipstick | `assets/img/PL650-dip.jpg` |
+| Big PELA 650 / Pro 14 | Insert the tube | `assets/img/PL650-conn.jpg` |
+| Big PELA 650 / Pro 14 | Pump | `assets/img/PL650-user.jpg` |
+| Big PELA 650 / Pro 14 | Empty & recycle | `assets/img/PL650-pour.jpg` |
+| PELA 6000 / 2000 | (kit overview) | `assets/img/PL2000BH-parts.gif` |
+| PELA 6000 / 2000 | Warm oil & insert tube | `assets/img/PL2000-dip.gif` |
+| PELA 6000 / 2000 | Attach the pump | `assets/img/PL2000-conn.gif` |
+| PELA 6000 / 2000 | Pump | `assets/img/PL2000BH-user.gif` |
+| PELA 6000 / 2000 | Stop / pull tube out | `assets/img/PL2000-out.gif` |
+| PELA 6000 / 2000 | Empty & recycle | `assets/img/PL2000-pour.gif` |
 
-The original site's "logo" is a FrontPage theme banner (text rendered as a themed image), not
-a clean standalone logo asset that could be located. A **fresh favicon + OG image** was
-generated from a simple PELA oil-drop wordmark instead:
+## Logo & favicon
 
-- `assets/img/favicon.svg`, `favicon.ico`, `favicon-16.png`, `favicon-32.png`
-- `assets/img/apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png`
-- `assets/img/og-image.png` (1200×630)
+`assets/img/pelalogo-1.gif` is the original PELA wordmark (red roof + three columns +
+"PELA", 171×83). The mark was redrawn as crisp vector art (`assets/img/favicon.svg`)
+and is now used both in the site header (inline SVG) and as the favicon. The PNG/ICO
+icon set was regenerated from that SVG:
 
-If you have the real PELA logo, replace `favicon.svg` and re-run a favicon generator, or just
-overwrite the PNG/ICO files at the same sizes.
+- `favicon.svg` (vector), `favicon.ico` (16/32/48/64), `favicon-16.png`, `favicon-32.png`
+- `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png`
 
-## How to fetch + optimize the product images (in Claude Code)
+The original low-res wordmark GIF is kept for reference. The `og-image.png` was left
+as-is (regenerate from the new mark if you want it to match).
 
-```bash
-cd assets/img
-for f in PL2000BH-use:pela-2000 PL6000BH-use:pela-6000 PL650-use:pela-650 PL14K-use:pela-pro-14; do
-  src="${f%%:*}"; out="${f##*:}"
-  curl -fsSL "https://www.pelaproducts.com/${src}.gif" -o "${out}.gif"
-  # Optimize to WebP (needs cwebp or ImageMagick); keep a PNG fallback if desired:
-  cwebp -q 82 "${out}.gif" -o "${out}.webp" 2>/dev/null || magick "${out}.gif" "${out}.webp"
-done
-```
+## Downloaded but not currently placed
 
-Then update the `src` attributes from `…/pela-2000.svg` to `…/pela-2000.webp` (and optionally
-add `<picture>` with a PNG fallback). Search the HTML for `TODO: replace with real` to find
-every spot.
+These are duplicates or low value, kept for completeness:
+
+- `assets/img/PL2000BH-des.gif`, `PL6000BH-des.gif`, `PL650-des.gif`, `PL14K-des.gif`
+  — tiny (~55px) thumbnail versions of the product shots already used at larger size.
+- `assets/img/PL2000BH-mow.gif` — a second lawnmower shot (the JPEG `PL650-mow.jpg`
+  is used instead).
+
+## Video
+
+The original "Video Demonstration" link opened a Flash popup
+(`/flash_video/pela_video.html` -> `/flash_video/pela.swf`). The SWF was downloaded to
+`assets/video/pela.swf`, and its poster image to `assets/img/pela_video_image.jpg`.
+
+**It is not embedded** because:
+
+1. Flash is unsupported by all modern browsers (no plugin/runtime since 2021).
+2. The SWF is a 37 KB, ~2-second stub containing only a tiny 43x45 raw-frame stream
+   (confirmed with `ffprobe`) - there is no real demonstration footage inside to
+   transcode to MP4/WebM.
+
+If a real demo video surfaces later, drop an `.mp4`/`.webm` into `assets/video/` and
+embed it with a `<video controls poster="assets/img/pela_video_image.jpg">` element.
