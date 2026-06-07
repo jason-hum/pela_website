@@ -37,4 +37,48 @@
       el.textContent = address;
     }
   });
+
+  /* ---- Video lightbox ----
+     Any [data-video-open] trigger opens #video-modal; [data-video-close]
+     elements (backdrop, close button) or Escape close it. The video is
+     paused and rewound on close so audio never keeps playing in the dark. */
+  var modal = document.getElementById("video-modal");
+  if (modal) {
+    var video = modal.querySelector("video");
+    var lastTrigger = null;
+
+    function openModal(trigger) {
+      lastTrigger = trigger || null;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      var closeBtn = modal.querySelector(".video-modal__close");
+      if (closeBtn) closeBtn.focus();
+      if (video && typeof video.play === "function") {
+        var p = video.play();
+        if (p && typeof p.catch === "function") p.catch(function () {});
+      }
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      if (video) {
+        video.pause();
+        try { video.currentTime = 0; } catch (e) {}
+      }
+      if (lastTrigger && typeof lastTrigger.focus === "function") lastTrigger.focus();
+    }
+
+    document.querySelectorAll("[data-video-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openModal(btn); });
+    });
+
+    modal.addEventListener("click", function (e) {
+      if (e.target.closest("[data-video-close]")) closeModal();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+  }
 })();

@@ -155,9 +155,10 @@ em { font-style: italic; }
 }
 .brand { display: inline-flex; align-items: center; gap: var(--sp-3); text-decoration: none; }
 .brand:hover { text-decoration: none; }
+.brand__mark { width: 60px; height: 60px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; color: var(--ink); }
-.brand__tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); }
+.brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.74rem; letter-spacing: 0.04em; color: var(--ink); }
+.brand__tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); }
 
 .nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius); cursor: pointer; color: var(--ink); }
 .nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after { content: ""; display: block; width: 20px; height: 2px; background: currentColor; position: relative; }
@@ -325,6 +326,28 @@ em { font-style: italic; }
 .footer-brand .brand__name { color: #fff; font-size: 1.45rem; }
 .footer-brand p { color: #93a8bd; margin-top: var(--sp-3); max-width: 38ch; }
 .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: var(--sp-6); padding-top: var(--sp-4); font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.03em; color: #7e94aa; display: flex; flex-wrap: wrap; gap: var(--sp-3); justify-content: space-between; }
+
+/* ---- Video tile + lightbox ----------------------------------------------- */
+.tile-video { position: relative; display: block; width: 100%; min-height: 280px; padding: 0; overflow: hidden; border: 1px solid var(--border); background: var(--ink); cursor: pointer; text-align: center; }
+.tile-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.74; transition: opacity 0.25s ease, transform 0.4s ease; }
+.tile-video:hover .tile-video__poster, .tile-video:focus-visible .tile-video__poster { opacity: 0.58; transform: scale(1.03); }
+.tile-video__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--sp-3); min-height: 280px; padding: var(--sp-6); }
+.tile-video__play { display: inline-flex; align-items: center; justify-content: center; width: 76px; height: 76px; border-radius: 50%; background: rgba(255,255,255,0.92); color: var(--ink); box-shadow: var(--shadow-hover); transition: transform 0.15s ease, background 0.15s ease; }
+.tile-video:hover .tile-video__play, .tile-video:focus-visible .tile-video__play { transform: scale(1.08); background: #fff; }
+.tile-video__play svg { width: 28px; height: 28px; margin-left: 5px; }
+.tile-video__label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-500); color: #fff; }
+.tile-video__sub { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.82); }
+
+.video-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: var(--sp-5); }
+.video-modal[hidden] { display: none; }
+.video-modal__backdrop { position: absolute; inset: 0; background: rgba(8, 20, 33, 0.82); backdrop-filter: blur(2px); animation: vm-fade 0.2s ease; }
+.video-modal__dialog { position: relative; z-index: 1; width: 100%; max-width: 880px; animation: vm-pop 0.22s ease; }
+.video-modal__frame { position: relative; aspect-ratio: 4 / 3; background: #000; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6); }
+.video-modal__frame video { position: absolute; inset: 0; width: 100%; height: 100%; }
+.video-modal__close { position: absolute; top: 10px; right: 10px; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; color: var(--ink); font-size: 1.5rem; line-height: 1; cursor: pointer; box-shadow: var(--shadow-hover); display: flex; align-items: center; justify-content: center; }
+.video-modal__close:hover { background: var(--accent-050); }
+@keyframes vm-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes vm-pop { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
 
 /* ---- Responsive ---------------------------------------------------------- */
 @media (max-width: 920px) {

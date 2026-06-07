@@ -140,7 +140,7 @@
           <!-- How it works label -->
           <div class="tile-label b-12">
             <h2>How it works</h2>
-            <span class="sku">Three steps</span>
+            <span class="sku">Three steps + demo</span>
           </div>
 
           <!-- Step tiles -->
@@ -159,6 +159,18 @@
             <h3>Pour &amp; recycle</h3>
             <p>Empty the captured oil with the pour spout, then take the used oil to a recycling depot.</p>
           </div>
+
+          <!-- Video tile — opens the lightbox -->
+          <button class="card tile-video b-12" type="button" data-video-open aria-haspopup="dialog">
+            <img class="tile-video__poster" src="assets/img/pela_video_image.jpg" alt="" loading="lazy">
+            <span class="tile-video__inner">
+              <span class="tile-video__play">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="tile-video__label">Watch how it works</span>
+              <span class="tile-video__sub">See the PELA pump in action</span>
+            </span>
+          </button>
 
           <!-- The range label -->
           <div class="tile-label b-12">
@@ -210,6 +222,20 @@
       </div>
     </section>
   </main>
+
+  <!-- Video lightbox -->
+  <div class="video-modal" id="video-modal" hidden>
+    <div class="video-modal__backdrop" data-video-close></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-label="PELA Oil Extractor video">
+      <button class="video-modal__close" type="button" data-video-close aria-label="Close video">&times;</button>
+      <div class="video-modal__frame">
+        <video id="pela-video" controls playsinline preload="none" poster="assets/img/pela_video_image.jpg">
+          <source src="assets/video/pela.mp4" type="video/mp4">
+          <p>Your browser can’t play this video. <a href="assets/video/pela.mp4">Download it instead</a>.</p>
+        </video>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
