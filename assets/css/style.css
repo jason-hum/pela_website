@@ -158,7 +158,7 @@ em { font-style: italic; }
 .brand__mark { width: 60px; height: 60px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.74rem; letter-spacing: 0.04em; color: var(--ink); }
-.brand__tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); }
+.brand__tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
 
 .nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius); cursor: pointer; color: var(--ink); }
 .nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after { content: ""; display: block; width: 20px; height: 2px; background: currentColor; position: relative; }
