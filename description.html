@@ -1,6 +1,20 @@
 <!DOCTYPE html>
+<!--
+  description.html — Description & specifications
+  ===========================================================================
+  The catalog page: one <article> per model (PELA 2000 / 6000 / Big PELA 650 /
+  Pro 14), each with a product photo, marketing copy, and a datasheet-style
+  spec list (.spec-list). Every product copy block and spec is reproduced
+  verbatim from the original live site — do not invent specs or prices.
+
+  Each <article> has an id (#pela-2000, #pela-6000, #pela-650, #pela-pro-14)
+  so other pages and external links can deep-link to a specific model.
+  Shares the standard page skeleton; see index.html's banner for the pattern.
+-->
 <html lang="en">
 <head>
+  <!-- Shared <head> (see index.html). This page adds a second JSON-LD block:
+       a @graph of Product entries for the four models. -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Description &amp; Specs — PELA 2000, 6000, Big PELA 650 &amp; Pro 14</title>
@@ -69,6 +83,9 @@
           </figure>
         </div>
 
+        <!-- One product card per model. .product-row lays out a fixed image
+             column beside the copy + spec list; it stacks on mobile. The id on
+             each <article> is the deep-link anchor for that model. -->
         <div class="grid" style="margin-top:var(--sp-6); gap:var(--sp-6);">
 
           <!-- PELA 2000 -->

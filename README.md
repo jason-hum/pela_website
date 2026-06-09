@@ -1,36 +1,46 @@
 # PELA Products — static website
 
-A modernized rebuild of [pelaproducts.com](https://www.pelaproducts.com/) — a small business
+A modernized rebuild of [pelaproducts.com](https://www.pelaproducts.com/), a small business
 selling manually operated vacuum pumps (oil extractors) for fluid removal. The original was a
 2009 Microsoft FrontPage site; this is a clean, fast, responsive static rebuild with the same
 content reorganized for better UX.
 
+> **New to the project or not a coder?** Read [DOCUMENTATION.md](DOCUMENTATION.md) first. It is
+> a full, plain-language guide to how the site works and how to make common changes (edit text,
+> change a price, swap a photo, add a review) without any coding background. This README is the
+> shorter, developer-facing overview.
+
 ## Tech stack
 
-Plain hand-written **HTML + CSS**, one small **vanilla JS** file (mobile nav + email
-assembly). No frameworks, no build step, no Node toolchain. Open the HTML files directly or
-serve the folder statically — that's it.
+Plain hand-written **HTML + CSS**, one small **vanilla JS** file. No frameworks, no build step,
+no Node toolchain. Open the HTML files directly or serve the folder statically, that's it.
+
+`assets/js/main.js` does four small things: defines the shared `<site-header>` / `<site-footer>`
+custom elements, the mobile nav toggle, runtime email assembly (anti-scraping), and the demo
+video lightbox.
 
 ## Project structure
 
 ```
 pela_website/
-├── index.html              # Home
+├── index.html              # Home (bento mosaic + embedded video lightbox)
 ├── applications.html       # Applications
 ├── description.html        # Description + specs (PELA 2000 / 6000 / 650 / Pro 14)
 ├── how-to-use.html         # How To Use (merges the old HowToUse1 + HowToUse2 sub-pages)
-├── product-reviews.html    # Product Reviews (press list, outbound links preserved)
+├── product-reviews.html    # Product Reviews (press list, links to scanned-review PDFs)
 ├── contact.html            # Where To Buy / Contact (obfuscated email)
 ├── robots.txt
 ├── sitemap.xml
-├── README.md
+├── README.md               # This file (developer overview)
+├── DOCUMENTATION.md        # Full plain-language guide for non-coders
 ├── MISSING_ASSETS.md       # Map of assets fetched from the original site + video note
 └── assets/
-    ├── css/style.css       # Single shared stylesheet + design tokens
-    ├── js/main.js          # Mobile nav toggle + email assembly
+    ├── css/style.css       # Single shared stylesheet + design tokens (~28 KB)
+    ├── js/main.js          # Shared header/footer + nav toggle + email assembly + video modal
     ├── fonts/              # Self-hosted woff2 (Hanken Grotesk) + OFL license
     ├── img/                # Favicons, OG image, real product + application photos
-    └── video/              # Archived original Flash demo (pela.swf, not embedded)
+    ├── reviews/            # Scanned magazine reviews (PDF), linked from product-reviews.html
+    └── video/              # Demo video (pela.mp4, embedded) + archived Flash original (pela.swf)
 ```
 
 Every page shares an **identical header/nav/footer** and a single design-token system (CSS
@@ -65,14 +75,17 @@ logo.
   50 KB total), so there is no Google Fonts request at runtime and the site works fully offline.
   `font-display: swap` plus `<link rel="preload">` on the upright face avoid layout flash. Licensed
   under the SIL Open Font License; the license file ships alongside (`OFL-HankenGrotesk.txt`).
-- **Color** — one brand hue + one accent + warm neutrals, as CSS custom properties in `:root`:
+- **Color** is one brand hue + a sparing red/pink + warm neutrals, all as CSS custom properties
+  in `:root`. Edit the tokens at the top of the stylesheet to recolor the whole site:
   - ink / logo navy `#11304F`, deepest `#0B2238`
-  - blueprint-blue accent `#2D6BF0`; **`#1F57D6` is used for accent-as-text** (links, kickers)
-    to clear AA contrast on the warm paper
-  - warm neutrals: page `#FFFDF9`, paper band `#F4EFE4`, media wells `#EFE9DB`, lines `#E4DDCD`
-    / `#D2C8B3`
-  - text `#26303A` / soft `#55626E` / faint `#5D6975`
-  - one functional warning amber (`#9C5A0E`) reserved for the safety note only
+  - logo-blue accent `--accent #192F4D` (primary CTA); `--accent-600 #14263E` for hover /
+    accent-as-text (links), tuned for AA contrast on the warm background
+  - brand red/pink from the logo (`--brand-red #C5362A`, `--brand-pink #E1A6B6`), reserved for
+    the safety / caution note and the small "PDF" review chips
+  - warm neutral background: a fixed gradient from `#FBF6EE` to `#F1ECE1` to `#E6E6F2`; cards
+    sit on white (`--surface #FFFFFF`) with media wells in `--surface-2 #EEF1F6`
+  - text `#25303A` / soft `#54616D` / faint `#5C6873`
+  - one functional warning amber token (`--warn #9C5A0E`) kept available for notes
 - All text/background pairings were checked for **WCAG AA** contrast (normal text ≥ 4.5:1) on
   both white and the warm paper band.
 - **Human-styling details:** the home page uses an editorial asymmetric hero, a numbered
@@ -89,11 +102,12 @@ The site sits on a single fixed, blue-tinted warm gradient; every block is a flo
 
 ## Design & accessibility
 
-- Mobile-first, fully responsive (nav collapses to a toggle under 680px).
+- Mobile-first, fully responsive (12-col bento reflows to 6 cols at 920px; nav collapses to a
+  toggle, and the bento stacks to one column, at 600px).
 - Semantic HTML, one `<h1>` per page, skip-link, visible focus states, `alt` on every image,
   `prefers-reduced-motion` respected.
-- Restrained B2B/DIY aesthetic: dark-blue ink + a single blueprint-blue accent. Flat, minimal.
-- Near-zero JS; CSS is a single ~10 KB file.
+- Restrained B2B/DIY aesthetic: dark-blue logo ink + a sparing brand red. Flat, minimal.
+- Near-zero JS (one ~7 KB file); CSS is a single ~28 KB file.
 
 ## SEO
 
@@ -161,13 +175,14 @@ Example Netlify `_redirects`:
 ## Content notes
 
 - Product copy, specs, prices, application list and the full press/review list are reproduced
-  **verbatim** from the live site — no specs or claims were invented.
-- The old Home page had a "Video Demonstration" link that opened a Flash popup
-  (`flash_video/pela.swf`). The SWF and its poster are archived under `assets/`, but it is
-  not embedded — Flash is dead and the file is a ~2-second stub with no real footage
-  (see `MISSING_ASSETS.md`).
+  **verbatim** from the live site. No specs or claims were invented.
+- A demo video (`assets/video/pela.mp4`) is embedded via a lightbox, opened from the video tile
+  on Home and the "Watch the video" button on How To Use (handled in `main.js`; the video pauses
+  and rewinds on close). The original Flash demo (`pela.swf`) is archived alongside but unused,
+  since Flash no longer runs in any browser (see `MISSING_ASSETS.md`).
 - The "How To Use" page was a hub linking to two instruction sub-pages; those were merged into
   one page with in-page anchors for better UX.
+- Three reviews link to scanned PDFs in `assets/reviews/`; the rest of the press list is text.
 
 ## TODOs
 
@@ -179,10 +194,11 @@ Example Netlify `_redirects`:
 - [x] **Real logo & favicon** — the PELA mark (red roof + three columns) was redrawn as vector
       (`favicon.svg`), used in the header, and the full favicon/icon set regenerated from it.
       The original wordmark GIF is archived at `assets/img/pelalogo-1.gif`.
+- [x] **Demo video** — `assets/video/pela.mp4` is embedded via the lightbox on Home and How To
+      Use. Swap in higher-quality footage by replacing that file (keep the name) and, optionally,
+      the poster `assets/img/pela_video_image.jpg`.
 - [ ] **OG image** — `og-image.png` still uses the old generated mark; regenerate from the new
       `favicon.svg` if you want link previews to match.
-- [ ] **Demo video** — only a dead Flash stub existed (archived, not embedded). Add an
-      `.mp4`/`.webm` to `assets/video/` if real footage surfaces.
 - [ ] Update canonical/OG base URL if hosting somewhere other than `www.pelaproducts.com`.
 - [ ] Configure the 301 redirects above at hosting time.
 ```

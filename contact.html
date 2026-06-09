@@ -1,6 +1,17 @@
 <!DOCTYPE html>
+<!--
+  contact.html — Where To Buy & Contact
+  ===========================================================================
+  Two cards: an email contact card and a "where to buy" card. The email
+  address is never written in the HTML as plain text — main.js assembles
+  inquiries@pelaproducts.com at runtime into any [data-email] element to
+  reduce scraping. A <noscript> fallback shows an obfuscated "[at]/[dot]"
+  version for users without JavaScript.
+-->
 <html lang="en">
 <head>
+  <!-- Shared <head> (see index.html). Adds Organization JSON-LD with a
+       contactPoint for customer support. -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Where To Buy &amp; Contact — PELA Products</title>
@@ -61,7 +72,12 @@
           <div class="card contact-card">
             <h2>Get in touch</h2>
             <p class="muted">Questions about a pump, parts, or your application? Drop us a line and we’ll get back to you.</p>
+            <!-- data-email: main.js turns this into a mailto: link at runtime.
+                 data-email-text: also replace the visible text with the address.
+                 data-subject: prefills the email subject line. -->
             <a class="email-link" href="contact.html" data-email data-email-text data-subject="PELA Products enquiry">Email PELA Products</a>
+            <!-- Shown only when JavaScript is off, so the address is reachable
+                 but still lightly obfuscated against scrapers. -->
             <noscript>
               <p class="muted">Email us at: <strong>inquiries [at] pelaproducts [dot] com</strong></p>
             </noscript>

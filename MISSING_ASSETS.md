@@ -65,16 +65,22 @@ These are duplicates or low value, kept for completeness:
 
 ## Video
 
+A demo video, `assets/video/pela.mp4`, is now embedded. It plays in a lightbox opened
+from the video tile on `index.html` and the "Watch the video" button on `how-to-use.html`
+(handled by `assets/js/main.js`). Its poster image is `assets/img/pela_video_image.jpg`.
+
+To replace it, drop a new `.mp4` into `assets/video/` named `pela.mp4` (and optionally
+update the poster). The markup already uses
+`<video controls poster="assets/img/pela_video_image.jpg">`.
+
+### Original Flash source (archived, not used)
+
 The original "Video Demonstration" link opened a Flash popup
 (`/flash_video/pela_video.html` -> `/flash_video/pela.swf`). The SWF was downloaded to
-`assets/video/pela.swf`, and its poster image to `assets/img/pela_video_image.jpg`.
-
-**It is not embedded** because:
+`assets/video/pela.swf`, and its poster image to `assets/img/pela_video_image.jpg`. It is
+kept for the record but **not** embedded, because:
 
 1. Flash is unsupported by all modern browsers (no plugin/runtime since 2021).
 2. The SWF is a 37 KB, ~2-second stub containing only a tiny 43x45 raw-frame stream
    (confirmed with `ffprobe`) - there is no real demonstration footage inside to
    transcode to MP4/WebM.
-
-If a real demo video surfaces later, drop an `.mp4`/`.webm` into `assets/video/` and
-embed it with a `<video controls poster="assets/img/pela_video_image.jpg">` element.

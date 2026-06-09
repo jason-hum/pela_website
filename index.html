@@ -1,6 +1,25 @@
 <!DOCTYPE html>
+<!--
+  index.html — Home page
+  ===========================================================================
+  The site's landing page. Built as a responsive "bento" mosaic (see the
+  <main> below): a 12-column grid of cards that introduces the product line,
+  explains how the pump works, embeds the demo video, and lists every model.
+
+  Every page in this site shares the same skeleton:
+    <head>        meta + SEO + favicons + Open Graph + fonts/CSS + JSON-LD
+    <site-header> shared nav, injected by assets/js/main.js (custom element)
+    <main>        page-specific content
+    <site-footer> shared footer, injected by assets/js/main.js
+    <script>      assets/js/main.js (nav toggle, email assembly, video modal)
+
+  There is no build step. Edit the HTML directly and reload in a browser.
+  See DOCUMENTATION.md for the full architecture and "how to change X" guide.
+-->
 <html lang="en">
 <head>
+  <!-- Core meta + per-page SEO. The <title> and description are unique per
+       page; canonical points at the production URL (update if you re-host). -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PELA Products — Quick, Easy &amp; Clean Oil Changes | Oil Extractors</title>
@@ -29,9 +48,13 @@
   <meta name="twitter:description" content="Manually operated vacuum pumps for fluid removal. The new way to change oil — and you won’t spill a drop.">
   <meta name="twitter:image" content="https://www.pelaproducts.com/assets/img/og-image.png">
 
+  <!-- Self-hosted font (preloaded to avoid a flash of unstyled text) + the
+       single shared stylesheet. No external font/CSS requests at runtime. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-latin-var.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <!-- Structured data (JSON-LD) for search engines. Organization appears on
+       every page; the home page adds the Product line as an ItemList. -->
   <!-- Structured data: Organization (site-wide) -->
   <script type="application/ld+json">
   {
@@ -61,13 +84,19 @@
   </script>
 </head>
 <body>
+  <!-- Accessibility: keyboard/screen-reader users can jump straight to <main>. -->
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Shared header. The `current` attribute marks the active nav item; the
+       element is defined and rendered by assets/js/main.js. -->
   <site-header current="home"></site-header>
 
   <main id="main">
     <section class="section">
       <div class="container">
+        <!-- Bento mosaic: 12-column grid (.bento). Each child sets its span
+             with a .b-N utility (.b-8 = 8 of 12 cols). It reflows to 6 columns
+             on tablet and a single stack on mobile via the stylesheet. -->
         <div class="bento">
 
           <!-- Hero headline tile -->
@@ -191,7 +220,10 @@
     </section>
   </main>
 
-  <!-- Video lightbox -->
+  <!-- Video lightbox. Hidden until a [data-video-open] trigger (the video tile
+       above) is clicked; main.js toggles `hidden`, plays/pauses the <video>,
+       and wires up close-on-backdrop, close-button and Escape. The same markup
+       is reused on how-to-use.html. -->
   <div class="video-modal" id="video-modal" hidden>
     <div class="video-modal__backdrop" data-video-close></div>
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-label="PELA Oil Extractor video">
@@ -205,8 +237,11 @@
     </div>
   </div>
 
+  <!-- Shared footer, rendered by assets/js/main.js. -->
   <site-footer></site-footer>
 
+  <!-- Single site-wide script: defines <site-header>/<site-footer>, the mobile
+       nav toggle, runtime email assembly, and the video lightbox. -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

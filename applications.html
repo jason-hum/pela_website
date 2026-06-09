@@ -1,6 +1,17 @@
 <!DOCTYPE html>
+<!--
+  applications.html — Applications page
+  ===========================================================================
+  Lists where a PELA extractor is used: a grid of use-case cards (.app-grid)
+  followed by a gallery of real-world photos (.photo-grid). Shares the same
+  page skeleton as every page (see index.html's banner for the full pattern):
+  <head> meta/SEO, <site-header>, <main>, <site-footer>, then main.js.
+-->
 <html lang="en">
 <head>
+  <!-- Shared <head>: core meta + per-page SEO, favicons, Open Graph/Twitter,
+       font preload, stylesheet, and Organization JSON-LD. Same on every page;
+       only the title/description/canonical/og text changes per page. -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Applications — PELA Oil Extractors | Boats, Engines, Industrial</title>
@@ -52,6 +63,9 @@
           <p class="lede">PELA oil extractors are popular with do-it-yourselfers and professionals alike. Common uses include:</p>
         </div>
 
+        <!-- Use-case cards. Each <li> = an inline SVG icon + a use case. The
+             icons are hand-drawn 24x24 line glyphs (boat, mower, motorcycle,
+             car, machinery, water drop). -->
         <ul class="app-grid" style="margin-top:var(--sp-6);">
           <li>
             <svg class="app__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 14h18l-2 5H5l-2-5z"/><path d="M5 14V7l6 3 6-6v10"/></svg>
@@ -79,6 +93,8 @@
           </li>
         </ul>
 
+        <!-- Real-world photo gallery. Originals pulled from the live site, so
+             they are low-resolution; swap in higher-res versions if available. -->
         <h2 style="margin-top:var(--sp-7);">PELA in the field</h2>
         <ul class="photo-grid" style="margin-top:var(--sp-4);">
           <li><figure>
