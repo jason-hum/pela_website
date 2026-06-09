@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PELA">
-  <rect width="64" height="64" rx="14" fill="#11304f"/>
-  <!-- PELA mark: red roof over three columns (pink / red / pink) -->
-  <path d="M32 8 L53 29 L11 29 Z" fill="#d6201c"/>
-  <rect x="17.5" y="29" width="8" height="27" fill="#eca3b6"/>
-  <rect x="28"   y="29" width="8" height="27" fill="#d6201c"/>
-  <rect x="38.5" y="29" width="8" height="27" fill="#eca3b6"/>
+  <!-- PELA mark: red roof over three columns (blue / red / blue), matching the site logo -->
+  <g transform="translate(19.1 8) scale(0.615)">
+    <path d="M21 0 L42 31 L0 31 Z" fill="#c64544"/>
+    <rect x="0"  y="34" width="12" height="44" fill="#dc91b4"/>
+    <rect x="15" y="34" width="12" height="44" fill="#c64544"/>
+    <rect x="30" y="34" width="12" height="44" fill="#dc91b4"/>
+  </g>
 </svg>

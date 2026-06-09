@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="The Original PELA — Since 1996">
+  <defs>
+    <path id="seal-top" d="M 38,100 A 62,62 0 0 1 162,100"/>
+    <path id="seal-bottom" d="M 36,100 A 64,64 0 0 0 164,100"/>
+  </defs>
+
+  <!-- Disc + edge ring -->
+  <circle cx="100" cy="100" r="96" fill="#11304f"/>
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.28"/>
+
+  <!-- Curved labels -->
+  <g font-family="'Hanken Grotesk', Arial, sans-serif" font-weight="700">
+    <text font-size="15" letter-spacing="3" fill="#ffffff">
+      <textPath href="#seal-top" startOffset="50%" text-anchor="middle">THE ORIGINAL</textPath>
+    </text>
+    <text font-size="13" letter-spacing="3" fill="#dc91b4">
+      <textPath href="#seal-bottom" startOffset="50%" text-anchor="middle">SINCE 1996</textPath>
+    </text>
+  </g>
+
+  <!-- PELA logo mark (matches site header) -->
+  <g transform="translate(100,82) scale(0.42) translate(-21,-39)">
+    <path d="M21 0 L42 31 L0 31 Z" fill="#c64544"/>
+    <rect x="0"  y="34" width="12" height="44" fill="#dc91b4"/>
+    <rect x="15" y="34" width="12" height="44" fill="#c64544"/>
+    <rect x="30" y="34" width="12" height="44" fill="#dc91b4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="100" y="126" text-anchor="middle" font-family="'Hanken Grotesk', Arial, sans-serif" font-weight="800" font-size="30" letter-spacing="1.5" fill="#ffffff">PELA</text>
+</svg>

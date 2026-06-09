@@ -6,7 +6,7 @@
    ========================================================================== */
 
 /* ---- Self-hosted fonts --------------------------------------------------- */
-@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-latin-var.woff2") format("woff2"); font-weight: 300 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-latin-var.woff2") format("woff2"); font-weight: 300 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-latin-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 
 /* ---- Design tokens ------------------------------------------------------- */
@@ -37,6 +37,11 @@
   --brand-pink: #e1a6b6;
   --brand-pink-050: #f9edf0; /* lightest pink — soft fill */
   --focus: #192f4d;
+
+  /* Logo colours, matched to pelaproducts.eu */
+  --brand-steel: #2d4b75;   /* PELA wordmark + outer pillars */
+  --brand-steel-soft: #dc91b4; /* outer pillars — pink accent */
+  --brand-mark-red: #c64544;   /* triangle + centre pillar */
 
   /* One warm humanist sans for everything; display & "mono" alias it so the
      whole site reads as a single voice, distinguished only by weight + size. */
@@ -146,6 +151,7 @@ em { font-style: italic; }
 .page-head .lede { margin-bottom: 0; }
 
 /* ---- Header (floating card) --------------------------------------------- */
+site-header, site-footer { display: block; }
 .site-header { position: sticky; top: 0; z-index: 50; background: transparent; padding-top: var(--sp-3); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
@@ -155,10 +161,10 @@ em { font-style: italic; }
 }
 .brand { display: inline-flex; align-items: center; gap: var(--sp-3); text-decoration: none; }
 .brand:hover { text-decoration: none; }
-.brand__mark { width: 60px; height: 60px; flex: none; }
+.brand__mark { width: auto; height: 50px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.74rem; letter-spacing: 0.04em; color: var(--ink); }
-.brand__tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.brand__name { font-family: var(--font-display); font-weight: 1000; font-size: 2.05rem; letter-spacing: 0.02em; color: var(--accent); }
+.brand__tag { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
 
 .nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius); cursor: pointer; color: var(--ink); }
 .nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after { content: ""; display: block; width: 20px; height: 2px; background: currentColor; position: relative; }
@@ -189,7 +195,7 @@ em { font-style: italic; }
 .b-6 { grid-column: span 6; } .b-7 { grid-column: span 7; } .b-8 { grid-column: span 8; } .b-12 { grid-column: span 12; }
 
 /* Hero headline tile */
-.tile-hero { display: flex; flex-direction: column; justify-content: center; padding: clamp(var(--sp-5), 4vw, var(--sp-7)); }
+.tile-hero { position: relative; display: flex; flex-direction: column; justify-content: center; padding: clamp(var(--sp-5), 4vw, var(--sp-7)); }
 .tile-hero h1 { margin-bottom: var(--sp-4); }
 
 /* Product showcase tile */
@@ -298,7 +304,12 @@ em { font-style: italic; }
 .review-list li { margin: 0; padding: var(--sp-3) 0; border-bottom: 1px solid var(--border); }
 .review-list li:last-child { border-bottom: 0; }
 .review-list .pub { font-weight: 600; color: var(--ink); }
+.review-list a.pub { text-decoration: none; }
+.review-list a.pub:hover { text-decoration: underline; }
 .review-list .meta { color: var(--text-soft); }
+.review-group__note { margin: 0 0 var(--sp-3); color: var(--text-soft); font-size: 0.85rem; }
+.review-pdf { display: inline-block; margin-left: 6px; font-family: var(--font-mono); background: var(--brand-red); color: #fff; font-size: 0.62rem; font-weight: 700; padding: 2px 8px; border-radius: var(--radius); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: middle; text-decoration: none; }
+.review-pdf:hover { background: var(--brand-red-700); }
 
 /* Badges */
 .badge { display: inline-block; font-family: var(--font-mono); background: var(--accent-050); color: var(--accent-600); font-size: 0.66rem; font-weight: 700; padding: 3px 9px; border-radius: var(--radius); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: middle; }

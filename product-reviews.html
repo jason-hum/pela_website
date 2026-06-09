@@ -33,41 +33,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="PELA Products — home">
-          <svg class="brand__mark" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-            <rect width="64" height="64" rx="14" fill="#11304f"/>
-            <path d="M32 8 L53 29 L11 29 Z" fill="#d6201c"/>
-            <rect x="17.5" y="29" width="8" height="27" fill="#eca3b6"/>
-            <rect x="28" y="29" width="8" height="27" fill="#d6201c"/>
-            <rect x="38.5" y="29" width="8" height="27" fill="#eca3b6"/>
-          </svg>
-          <span class="brand__text">
-            <span class="brand__name">PELA</span>
-            <span class="brand__tag">Oil Extractors</span>
-          </span>
-        </a>
-
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-          <span class="sr-only">Menu</span>
-          <span class="nav-toggle__bar" aria-hidden="true"></span>
-        </button>
-
-        <nav id="primary-nav" class="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="applications.html">Applications</a></li>
-            <li><a href="description.html">Description</a></li>
-            <li><a href="how-to-use.html">How To Use</a></li>
-            <li><a href="product-reviews.html" aria-current="page">Product Reviews</a></li>
-            <li><a href="contact.html">Where To Buy</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <site-header current="product-reviews"></site-header>
 
   <main id="main">
     <section class="section">
@@ -88,10 +54,10 @@
                 <li><span class="pub">Mother Earth News</span>
                   <span class="meta">— Feb/Mar 2005 — “Green Gazette: An Easier way to Change Oil”</span>
                 </li>
-                <li><span class="pub">Consumer Reports</span>
+                <li><a class="pub" href="assets/reviews/consumer-reports-july-2001.pdf" target="_blank" rel="noopener">Consumer Reports</a><a class="review-pdf" href="assets/reviews/consumer-reports-july-2001.pdf" target="_blank" rel="noopener" aria-label="Read the Consumer Reports review (PDF)">PDF</a>
                   <span class="meta">— July 2001 — “Front Lines / Oil changes with less mess”</span>
                 </li>
-                <li><span class="pub">Popular Mechanics</span>
+                <li><a class="pub" href="assets/reviews/popular-mechanics-oct-1999.pdf" target="_blank" rel="noopener">Popular Mechanics</a><a class="review-pdf" href="assets/reviews/popular-mechanics-oct-1999.pdf" target="_blank" rel="noopener" aria-label="Read the Popular Mechanics review (PDF)">PDF</a>
                   <span class="meta">— Oct 1999 — “Great Stuff / Oil’s Well”</span>
                 </li>
               </ul>
@@ -149,9 +115,10 @@
 
             <div class="review-group">
               <h3>Motorcycles</h3>
+              <p class="review-group__note">Popular with Harley-Davidson riders and the wider V-twin community.</p>
               <ul class="review-list">
-                <li><span class="pub">Hot Bike</span>
-                  <span class="meta">— December 2000 — “Hot Bike Tested — The No Mess Oil Change”</span>
+                <li><a class="pub" href="assets/reviews/hot-bike-december-2000.pdf" target="_blank" rel="noopener">Hot Bike</a><a class="review-pdf" href="assets/reviews/hot-bike-december-2000.pdf" target="_blank" rel="noopener" aria-label="Read the Hot Bike review (PDF)">PDF</a>
+                  <span class="meta">— December 2000 — “Hot Bike Tested — The No Mess Oil Change” (Harley-Davidson enthusiast magazine)</span>
                 </li>
                 <li><span class="pub">Bikernet</span>
                   <span class="meta">— “Bandit’s Latest Product Picks — PELA 6000 Oil Extractor”</span>
@@ -224,43 +191,8 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-card">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <span class="brand__name">PELA Products</span>
-            <p>Manually operated vacuum pumps for fluid removal — the quick, easy, clean and environmentally friendly way to change oil.</p>
-          </div>
-          <div>
-            <h4>Pages</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="applications.html">Applications</a></li>
-              <li><a href="description.html">Description</a></li>
-              <li><a href="how-to-use.html">How To Use</a></li>
-              <li><a href="product-reviews.html">Product Reviews</a></li>
-              <li><a href="contact.html">Where to buy</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="contact.html" data-email data-subject="PELA Products enquiry">Email us</a></li>
-              <li><a href="contact.html">Where to buy</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <span>&copy; <span id="year">2009</span> PELA Products. All rights reserved.</span>
-          <span>The new way to change oil.</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 
   <script src="assets/js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
