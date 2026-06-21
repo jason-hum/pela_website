@@ -328,6 +328,10 @@ site-header, site-footer { display: block; }
 .contact-card .email-link, .contact-card .cta-row { margin-top: auto; padding-top: var(--sp-3); }
 .contact-card .cta-row { margin-bottom: 0; }
 .email-link { font-family: var(--font-mono); font-size: var(--fs-500); font-weight: 700; color: var(--accent-600); word-break: break-word; }
+/* Inline links inside the contact card copy: make them clearly clickable with a
+   persistent underline, and lift on hover for a more obvious affordance. */
+.contact-card p a { font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-color: var(--accent); border-radius: 3px; transition: color 0.15s ease, background 0.15s ease, text-decoration-color 0.15s ease; }
+.contact-card p a:hover { color: var(--accent-600); background: var(--accent-050); text-decoration-color: currentColor; box-shadow: 0 0 0 3px var(--accent-050); }
 
 /* ---- Footer (dark card) -------------------------------------------------- */
 .site-footer { background: transparent; margin-top: var(--sp-8); padding-bottom: var(--sp-6); }
