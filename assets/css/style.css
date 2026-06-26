@@ -156,23 +156,23 @@ site-header, site-footer { display: block; }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
   min-height: 60px; padding: var(--sp-2) var(--sp-3) var(--sp-2) var(--sp-4);
-  background: rgba(255, 255, 255, 0.82); backdrop-filter: saturate(150%) blur(12px);
-  border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+  background: var(--ink-deep);
+  border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
 }
 .brand { display: inline-flex; align-items: center; gap: var(--sp-3); text-decoration: none; }
 .brand:hover { text-decoration: none; }
 .brand__mark { width: auto; height: 50px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand__name { font-family: var(--font-display); font-weight: 1000; font-size: 2.05rem; letter-spacing: 0.02em; color: var(--accent); }
-.brand__tag { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.brand__name { font-family: var(--font-display); font-weight: 1000; font-size: 2.05rem; letter-spacing: 0.02em; color: #fff; }
+.brand__tag { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; }
 
-.nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius); cursor: pointer; color: var(--ink); }
+.nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: var(--radius); cursor: pointer; color: #fff; }
 .nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after { content: ""; display: block; width: 20px; height: 2px; background: currentColor; position: relative; }
 .nav-toggle__bar::before { position: absolute; top: -6px; }
 .nav-toggle__bar::after { position: absolute; top: 6px; }
 
 .site-nav ul { list-style: none; display: flex; gap: var(--sp-1); margin: 0; padding: 0; }
-.site-nav a { display: inline-block; padding: var(--sp-2) var(--sp-3); border-radius: var(--radius); text-decoration: none; color: var(--text-soft); font-weight: 500; font-size: 0.92rem; }
+.site-nav a { display: inline-block; padding: var(--sp-2) var(--sp-3); border-radius: var(--radius); text-decoration: none; color: #fff; font-weight: 500; font-size: 0.92rem; }
 .site-nav a:hover { background: var(--surface-2); color: var(--ink); text-decoration: none; }
 .site-nav a[aria-current="page"] { color: var(--accent-600); background: var(--accent-050); }
 
@@ -390,7 +390,8 @@ site-header, site-footer { display: block; }
   .site-nav { position: absolute; top: calc(100% + var(--sp-2)); left: 0; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-hover); display: none; }
   .site-nav.is-open { display: block; }
   .site-nav ul { flex-direction: column; gap: 0; padding: var(--sp-3); }
-  .site-nav a { display: block; padding: var(--sp-3) var(--sp-4); }
+  /* The open mobile menu is a white panel, so its links stay dark for contrast. */
+  .site-nav a { display: block; padding: var(--sp-3) var(--sp-4); color: var(--text-soft); }
 }
 @media (max-width: 600px) {
   .bento { grid-template-columns: 1fr; gap: var(--sp-3); }
